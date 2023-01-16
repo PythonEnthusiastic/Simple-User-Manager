@@ -1,0 +1,18 @@
+table
+    thead 
+        tr 
+            th Username
+            th Name
+            th Age
+            th Email
+    each val in user_info 
+        tbody(id=val['UserID'])
+            tr 
+                td=val["Username"]
+                td=val["Name"]
+                td=val["Age"]
+                td=val["Email"]
+                td
+                    div(class="options")
+                        a(href="/users/" + val['UserID']) Edit 
+                        a(href="/delete/" + val['UserID']) Delete
